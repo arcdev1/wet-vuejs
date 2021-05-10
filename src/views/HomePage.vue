@@ -14,11 +14,7 @@
       </Column>
       <Column :md="4">
         <h2>Ipsum</h2>
-        <img
-          src="https://picsum.photos/300/200"
-          alt=""
-          aria-role="presentation"
-        />
+        <img src="https://picsum.photos/300/200" alt="" role="presentation" />
       </Column>
     </Row>
     &nbsp;
