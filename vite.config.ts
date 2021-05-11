@@ -11,7 +11,7 @@ export default defineConfig({
   plugins: [
     vue(),
     legacy({
-      targets: ["defaults", "IE > 10"],
+      targets: ["defaults or IE > 10"],
     }),
   ],
 });
