@@ -2,10 +2,10 @@
   <nav>
     <ul id="wb-tphp">
       <li class="wb-slc">
-        <a class="wb-sl" href="#wb-cont">{{ $t("skipTo.main") }}</a>
+        <a class="wb-sl" href="#wb-cont">{{ skipTo.main }}</a>
       </li>
       <li class="wb-slc">
-        <a class="wb-sl" href="#wb-info">{{ $t("skipTo.main") }}</a>
+        <a class="wb-sl" href="#wb-info">{{ skipTo.about }}</a>
       </li>
     </ul>
   </nav>
@@ -14,5 +14,13 @@
 import { defineComponent } from "vue";
 export default defineComponent({
   name: "SkipTo",
+  computed: {
+    labels() {
+      return {
+        skipToMain: this.$t("skipTo.main"),
+        skipToAbout: this.$t("skipTo.about"),
+      };
+    },
+  },
 });
 </script>
