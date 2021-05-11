@@ -4,6 +4,8 @@
 // in some of its widgets (e.g. the social media Share button and popup)
 // since the WET scripts need to run before any VueJS stuff, we need to patch
 // the language with a plain JS script called from index.html.
+// NB: This needs to work in old browsers, so don't use any modern JS features
+// (stick to ES3, if possible)
 
 (function () {
   var DEFAULT_LANGUAGE = "en";
@@ -11,7 +13,6 @@
   var LANG_KEY = "lang";
 
   setCurrentLanguage(SUPPORTED_LANGUAGES, DEFAULT_LANGUAGE, LANG_KEY);
-  legacyBrowser();
 
   function setCurrentLanguage(supportedLanguages, fallback, langKey) {
     var userRequestedLanguage =
@@ -70,23 +71,6 @@
     document.documentElement.lang = language;
     if (window.localStorage) {
       window.localStorage.setItem(langKey, language);
-    }
-  }
-
-  function legacyBrowser() {
-    var warning = {
-      en:
-        "<div style='background-color: papayawhip; padding: 4px; font-size:18px'>This website does not support Internet Explorer.</div>",
-      fr:
-        "<div style='background-color: papayawhip; padding: 4px; font-size:18px'>Ce site ne prend pas en charge Internet Explorer</div>",
-    };
-    var currentBrowser = navigator.userAgent;
-    var ie =
-      currentBrowser.indexOf("MSIE ") > -1 ||
-      currentBrowser.indexOf("Trident/") > -1;
-
-    if (ie) {
-      window.document.body.innerHTML = warning[document.documentElement.lang];
     }
   }
 })();
