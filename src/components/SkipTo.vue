@@ -2,10 +2,10 @@
   <nav>
     <ul id="wb-tphp">
       <li class="wb-slc">
-        <a class="wb-sl" href="#wb-cont">{{ skipTo.main }}</a>
+        <a class="wb-sl" href="#wb-cont">{{ skipToMain }}</a>
       </li>
       <li class="wb-slc">
-        <a class="wb-sl" href="#wb-info">{{ skipTo.about }}</a>
+        <a class="wb-sl" href="#wb-info">{{ skipToAbout }}</a>
       </li>
     </ul>
   </nav>
