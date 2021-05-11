@@ -10,15 +10,8 @@
   var SUPPORTED_LANGUAGES = ["en", "fr"];
   var LANG_KEY = "lang";
 
-  var ie =
-    navigator.userAgent.indexOf("MSIE ") > -1 ||
-    navigator.userAgent.indexOf("Trident/") > -1;
-
-  if (ie) {
-    alert("This site does not support Internet Explorer.");
-  }
-
   setCurrentLanguage(SUPPORTED_LANGUAGES, DEFAULT_LANGUAGE, LANG_KEY);
+  legacyBrowser();
 
   function setCurrentLanguage(supportedLanguages, fallback, langKey) {
     var userRequestedLanguage =
@@ -77,6 +70,23 @@
     document.documentElement.lang = language;
     if (window.localStorage) {
       window.localStorage.setItem(langKey, language);
+    }
+  }
+
+  function legacyBrowser() {
+    var warning = {
+      en:
+        "<div style='background-color: papayawhip'>This website does not support Internet Explorer.</div>",
+      fr:
+        "<div style='background-color: papayawhip'>Ce site ne prend pas en charge Internet Explorer</div>",
+    };
+    var currentBrowser = navigator.userAgent;
+    var ie =
+      currentBrowser.indexOf("MSIE ") > -1 ||
+      currentBrowser.indexOf("Trident/") > -1;
+
+    if (ie) {
+      window.document.body.innerHTML = warning[document.documentElement.lang];
     }
   }
 })();
