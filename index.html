@@ -32,6 +32,19 @@
 	</div>
 
 	<script src="/lang-fix.js"></script>
+	<script nomodule>
+		(function () {
+			var warning = {
+				en:
+					"This website does not fully support your web browser add may not work as expected. For a better user experience, please consider upgrading your browser.",
+				fr:
+					"Ce site Web ne prend pas entièrement en charge votre navigateur Web et peut ne pas fonctionner comme prévu. Pour une meilleure expérience utilisateur, pensez à mettre à jour votre navigateur.",
+			};
+			var warningEl = document.getElementById("legacy-browser-warning")
+			warningEl.className = null; // make it visible
+			warningEl.innerText = warning[document.documentElement.lang || "en"];
+		})();
+	</script>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 	<script src="https://www.canada.ca/etc/designs/canada/wet-boew/js/wet-boew.min.js"></script>
 	<script src="https://www.canada.ca/etc/designs/canada/wet-boew/js/theme.min.js"></script>
