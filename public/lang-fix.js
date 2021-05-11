@@ -76,9 +76,9 @@
   function legacyBrowser() {
     var warning = {
       en:
-        "<div style='background-color: papayawhip'>This website does not support Internet Explorer.</div>",
+        "<div style='background-color: papayawhip; padding: 4px; font-size:18px'>This website does not support Internet Explorer.</div>",
       fr:
-        "<div style='background-color: papayawhip'>Ce site ne prend pas en charge Internet Explorer</div>",
+        "<div style='background-color: papayawhip; padding: 4px; font-size:18px'>Ce site ne prend pas en charge Internet Explorer</div>",
     };
     var currentBrowser = navigator.userAgent;
     var ie =
