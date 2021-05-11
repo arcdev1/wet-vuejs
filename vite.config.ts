@@ -12,6 +12,7 @@ export default defineConfig({
     vue(),
     legacy({
       targets: ["defaults or IE > 10"],
+      additionalLegacyPolyfills: [],
     }),
   ],
 });
