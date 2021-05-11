@@ -24,11 +24,13 @@
 </head>
 
 <body vocab="http://schema.org/" resource="#wb-webpage" typeof="WebPage">
+	<div id="legacy-browser-warning" style='background-color: papayawhip; padding: 4px; font-size:18px' class='hidden'>
+
+	</div>
 	<div id="app">
 		<router-view></router-view>
 	</div>
 
-	<script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script>
 	<script src="/lang-fix.js"></script>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 	<script src="https://www.canada.ca/etc/designs/canada/wet-boew/js/wet-boew.min.js"></script>
