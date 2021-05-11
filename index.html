@@ -24,12 +24,14 @@
 </head>
 
 <body vocab="http://schema.org/" resource="#wb-webpage" typeof="WebPage">
-	<div id="legacy-browser-warning" class="alert" style="display:none">
-		<p role="alert" id="legacy-browser-warning-en" style="display:none" lang="en">
+	<div role="alert" id="legacy-browser-warning-en" style="display:none" lang="en">
+		<p>
 			This website does not fully support your web browser and may not work
 			as expected. For a better user experience, please consider upgrading.
 		</p>
-		<p role="alert" id="legacy-browser-warning-fr" style="display:none" lang="fr">
+	</div>
+	<div role="alert" id="legacy-browser-warning-fr" style="display:none" lang="fr">
+		<p>
 			Ce site Web ne prend pas entièrement en charge votre navigateur Web et
 			peut ne pas fonctionner comme prévu. Pour une meilleure expérience,
 			pensez à mettre à jour votre navigateur.
@@ -44,10 +46,7 @@
 	<script src="https://www.canada.ca/etc/designs/canada/wet-boew/js/wet-boew.min.js"></script>
 	<script src="https://www.canada.ca/etc/designs/canada/wet-boew/js/theme.min.js"></script>
 	<script nomodule>
-		(function () {
-			document.getElementById("legacy-browser-warning-" + document.documentElement.lang || "en").style.display = "block";
-			document.getElementById("legacy-browser-warning").style.display = "block";
-		})();
+		document.getElementById("legacy-browser-warning-" + document.documentElement.lang || "en").style.display = "block";
 	</script>
 	<script type="module" src="/src/main.ts"></script>
 </body>
