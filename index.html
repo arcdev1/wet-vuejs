@@ -7,14 +7,17 @@
 		wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licence-fr.html -->
 	<title>Canada.ca theme - Canada.ca
 	</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta content="width=device-width,initial-scale=1" name="viewport">
 	<meta name="description"
 		content="Web Experience Toolkit (WET) includes reusable components for building and maintaining innovative Web sites that are accessible, usable, and interoperable. These reusable components are open source software and free for use by departments and external Web communities">
 	<!-- TODO: Correct alternate links below -->
 	<link rel="alternate" hreflang="fr" href="https://canada.ca/en">
 	<link rel="alternate" hreflang="en" href="https://canada.ca/en">
-	<link rel="stylesheet" href="https://www.canada.ca/etc/designs/canada/wet-boew/css/wet-boew.min.css" />
-	<link rel="stylesheet" href="https://www.canada.ca/etc/designs/canada/wet-boew/css/theme.min.css" />
+	<!-- CANADA.CA THEME (GCWeb) -->
+	<link rel="stylesheet" href="/GCWeb/css/theme.min.css" />
+	<!-- WET BOEW THEME  -->
+	<!-- <link rel="stylesheet" href="/theme-wet-boew/css/theme.min.css" /> -->
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
 		integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
 	<link href="https://www.canada.ca/etc/designs/canada/wet-boew/assets/favicon.ico" rel="icon" type="image/x-icon" />
@@ -24,20 +27,25 @@
 </head>
 
 <body vocab="http://schema.org/" resource="#wb-webpage" typeof="WebPage">
-	<div role="alert" id="legacy-browser-warning-en" style="display:none" lang="en"
-		class="alert alert-warning bg-warning">
-		<p>
-			This website does not fully support your web browser and may not work as expected. For a better user experience,
-			please consider upgrading.
-		</p>
-	</div>
-	<div role="alert" id="legacy-browser-warning-fr" style="display:none" lang="fr"
-		class="alert alert-warning bg-warning">
-		<p>
-			Ce site Web ne prend pas entièrement en charge votre navigateur Web et peut ne pas fonctionner comme prévu. Pour
-			une meilleure expérience, pensez à mettre à jour votre navigateur.
-		</p>
-	</div>
+	<section class="bg-warning" id="legacy-browser-warning" style="display:none;padding: 0 2rem;">
+		<h1 class="wb-inv">Out-of-date briwser detected</h1>
+		<div role="alert" id="legacy-browser-warning-en" style="display:none" lang="en" class="alert alert-warning">
+			<h2>Legacy Browser Warning</h2>
+			<p>
+				This website does not fully support your web browser and may not work as expected. For a better user
+				experience,
+				please consider upgrading.
+			</p>
+		</div>
+		<div role="alert" id="legacy-browser-warning-fr" style="display:none" lang="fr" class="alert alert-warning">
+			<h2>Avertissement de navigateur obsolète</h2>
+			<p>
+				Ce site Web ne prend pas entièrement en charge votre navigateur Web et peut ne pas fonctionner comme prévu.
+				Pour
+				une meilleure expérience, pensez à mettre à jour votre navigateur.
+			</p>
+		</div>
+	</section>
 	<div id="app">
 		<router-view></router-view>
 	</div>
@@ -48,6 +56,7 @@
 	<script src="https://www.canada.ca/etc/designs/canada/wet-boew/js/theme.min.js"></script>
 	<script nomodule>
 		document.getElementById("legacy-browser-warning-" + document.documentElement.lang || "en").style.display = "block";
+		document.getElementById("legacy-browser-warning").style.display = "block";
 	</script>
 	<script type="module" src="/src/main.ts"></script>
 </body>
