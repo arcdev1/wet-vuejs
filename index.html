@@ -14,7 +14,12 @@
 	<link rel="alternate" hreflang="fr" href="https://canada.ca/en">
 	<link rel="alternate" hreflang="en" href="https://canada.ca/en">
 	<!-- CANADA.CA THEME (GCWeb) -->
+	<link rel="preload" as="style" href="/GCWeb/css/theme.min.css" />
 	<link rel="stylesheet" href="/GCWeb/css/theme.min.css" />
+
+	<link rel="preload" as="style" href="https://www.canada.ca/etc/designs/canada/cdts/gcweb/v4_0_39/cdts/cdtsapps.css" />
+	<link rel="stylesheet" href="https://www.canada.ca/etc/designs/canada/cdts/gcweb/v4_0_39/cdts/cdtsapps.css" />
+
 	<!-- WET BOEW THEME  -->
 	<!-- <link rel="stylesheet" href="/theme-wet-boew/css/theme.min.css" /> -->
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
@@ -49,15 +54,18 @@
 		<router-view></router-view>
 	</div>
 
+
+
 	<script src="/lang-fix.js"></script>
+	<script type="module" src="/src/main.ts"></script>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-	<script src="https://www.canada.ca/etc/designs/canada/wet-boew/js/wet-boew.min.js"></script>
-	<script src="https://www.canada.ca/etc/designs/canada/wet-boew/js/theme.min.js"></script>
+	<script src="/wet-boew/js/wet-boew.min.js"></script>
+	<script src="GCWeb/js/theme.min.js"></script>
 	<script nomodule>
 		document.getElementById("legacy-browser-warning-" + document.documentElement.lang || "en").style.display = "block";
 		document.getElementById("legacy-browser-warning").style.display = "block";
 	</script>
-	<script type="module" src="/src/main.ts"></script>
+
 </body>
 
 </html>

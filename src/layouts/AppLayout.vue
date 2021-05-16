@@ -5,10 +5,10 @@
       <TopBanner>
         <LanguageToggle />
         <BannerLogo />
-        <!-- // Add Search here when implemented.  -->
         <Search />
       </TopBanner>
-      <GCWebMenu />
+      <AppBar />
+      <AppMenu />
       <Breadcrumb />
     </Header>
     <Main>
@@ -22,9 +22,6 @@
       </PageDetails>
     </Main>
     <Footer>
-      <Landscape>
-        <AboutGovernment />
-      </Landscape>
       <Brand>
         <Container>
           <Row>
@@ -42,8 +39,9 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import AboutGovernment from "../components/AboutGovernment.vue";
+
 import AboutSite from "../components/AboutSite.vue";
+import AppMenu from "../components/AppMenu.vue";
 import BannerLogo from "../components/BannerLogo.vue";
 import Brand from "../components/Brand.vue";
 import Breadcrumb from "../components/Breadcrumb.vue";
@@ -51,9 +49,9 @@ import Column from "../components/Column.vue";
 import Container from "../components/Container.vue";
 import DateModified from "../components/DateModified.vue";
 import Footer from "../components/Footer.vue";
-import GCWebMenu from "../components/GCWebMenu.vue";
+import AppBar from "../components/AppBar.vue";
 import Header from "../components/Header.vue";
-import Landscape from "../components/Landscape.vue";
+
 import LanguageToggle from "../components/LanguageToggle.vue";
 import Logo from "../components/Logo.vue";
 import Main from "../components/Main.vue";
@@ -67,10 +65,11 @@ import SkipTo from "../components/SkipTo.vue";
 import TopBanner from "../components/TopBanner.vue";
 
 export default defineComponent({
-  name: "DefaultLayout",
+  name: "AppLayout",
   components: {
-    AboutGovernment,
     AboutSite,
+    AppBar,
+    AppMenu,
     BannerLogo,
     Brand,
     Breadcrumb,
@@ -78,9 +77,8 @@ export default defineComponent({
     Container,
     DateModified,
     Footer,
-    GCWebMenu,
     Header,
-    Landscape,
+
     LanguageToggle,
     Logo,
     Main,

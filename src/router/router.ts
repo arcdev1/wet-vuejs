@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomePage from "../views/HomePage.vue";
+import DataTableDemo from "../views/DataTableDemo.vue";
 
 const routes = [
   {
@@ -13,6 +14,10 @@ const routes = [
   {
     path: "/fr",
     component: HomePage,
+  },
+  {
+    path: "/dt",
+    component: DataTableDemo,
   },
   // {
   //   path: "/data/:package",
@@ -31,7 +36,20 @@ const routes = [
   // },
 ];
 
-export const router = createRouter({
+const router = createRouter({
   history: createWebHistory(),
   routes,
 });
+
+// router.afterEach((_to, _from) => {
+//   console.log("router");
+//   if (typeof window !== "undefined" && window.wb) {
+//     console.log("wb start");
+//     console.dir(window.wb);
+//     window.wb.isReady = false;
+//     window.wb.isStarted = false;
+//     window.wb.start();
+//   }
+// });
+
+export { router };

@@ -2,6 +2,11 @@
   <DefaultLayout>
     <PageTitle :title="title" />
     <Row>
+      <p>
+        <router-link to="/dt">Data Table Demo</router-link>
+      </p>
+    </Row>
+    <Row>
       <Column :md="8">
         <h2>Lorem</h2>
         <p>

@@ -34,7 +34,8 @@
     window.location.href.replace(
       /[?&]+([^=&]+)=([^&]*)/gi,
       function (_, key, value) {
-        return (params[key] = value);
+        params[key] = value;
+        return params[key];
       }
     );
     return params[langKey];
